@@ -5,8 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Documentation Libs
 
 [React](https://es.react.dev/)
+
 [React Query](https://www.npmjs.com/package/react-query)
+
 [Styled Components](https://styled-components.com/docs/basics)
+
+[Typescript](https://www.typescriptlang.org/)
+
 
 ## Pre-Requirements
 
