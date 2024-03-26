@@ -15,6 +15,11 @@ export const Button = styled.button<ButtonProps>`
   background-color: ${props => props.disabled ? "#979797" : "#3BD4AE" };
   cursor: ${props => props.disabled ? "not-allowed" : "pointer" };
 
+  ${({ $variant }) => $variant ? {
+    backgroundColor: 'white',
+    border: '1px solid #1F1646'
+  } : null }
+
   @media only screen and (max-width: 768px) {
     width: 169px;
     height: 39px;

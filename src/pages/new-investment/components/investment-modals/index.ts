@@ -1,0 +1,1 @@
+export { default as InvestmentSuccess } from './investment-success'

@@ -1,5 +1,7 @@
 export * from './button'
 export * from './chip'
 export * from './input'
+export * from './modal'
 export * from './select'
+export * from './spinner'
 export * from './text'

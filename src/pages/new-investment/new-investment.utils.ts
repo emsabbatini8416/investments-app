@@ -88,6 +88,17 @@ const newInvestmentReducer = (
 
       return newState
     }
+    case NewInvestmentActionType.MODAL: {
+      const { modal } =
+        payload as NewInvestmentPayloadActionPaired[NewInvestmentActionType.MODAL]
+
+      const newState: NewInvestmentState = {
+        ...state,
+        modal
+      }
+
+      return newState
+    }
     default:
       throw new Error(`Unhandled action type: ${action.type}`)
   }
@@ -131,6 +142,11 @@ const useNewInvestment = () => {
   const mutationStore = useMutation(() => storeInvestmentApi(certify), {
     onSuccess: response => {
 
+      dispatch({
+        type: NewInvestmentActionType.MODAL,
+        payload: { modal: true }
+      })
+
     },
     onError: error => {
       console.log(error)
@@ -140,8 +156,8 @@ const useNewInvestment = () => {
   const handleBackToInvestments = () => {
 
     dispatch({
-      type: NewInvestmentActionType.STEP,
-      payload: { step: 1 } 
+      type: NewInvestmentActionType.RESET,
+      payload: { ...newInvestmentInitialState } 
     })
     
     navigate(Routes.INVESTMENTS, {
@@ -222,13 +238,18 @@ const useNewInvestment = () => {
 
   }
 
+  const handleOnCloseModal = () => {
+    handleBackToInvestments()
+  }
+
   return {
     state,
     handleBackToInvestments,
     handleOnChange,
     handleOnCheckboxChange,
     handleOnClickContinue,
-    validateFlow
+    validateFlow,
+    handleOnCloseModal
   }
 }
 

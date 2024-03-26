@@ -6,7 +6,9 @@ export enum NewInvestmentActionType {
   SET_MODEL = 'SET_MODEL',
   SET_CURRENCY = 'SET_CURRENCY',
   SIMULATE = 'SIMULATE',
-  TERMS = 'TERMS'
+  TERMS = 'TERMS',
+  MODAL = 'MODAL',
+  RESET = 'RESET'
 }
 
 export const newInvestmentInitialState: NewInvestmentState = {
@@ -27,5 +29,6 @@ export const newInvestmentInitialState: NewInvestmentState = {
     parking: "",
     payment: ""
   },
-  terms: false
+  terms: false,
+  modal: false
 }

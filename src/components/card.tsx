@@ -6,6 +6,11 @@ export const Card = styled.div`
   background-color: #FFFFFF;
   padding: 48px;
   margin: 14px 0;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 768px) {
     padding: 24px;

@@ -37,3 +37,10 @@ export const StyledTermsText = styled(Text)<{ $underline?: boolean }>`
   font-style: italic;
   ${({ $underline }) => `text-decoration: ${ $underline ? 'underline' : 'none'};`}
 `
+
+export const StyledModalButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 16px 0 0 0;
+`

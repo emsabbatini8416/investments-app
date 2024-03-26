@@ -1,4 +1,4 @@
-import { Select } from "components"
+import { Select, Spinner } from "components"
 import { StyledInput, StyledInvestmentFormContainer, StyledRow } from "../styles"
 import { useCurrencies, useModels } from "./investment-form.utils"
 import { InvestmentFormProps } from "./investment-form.types"
@@ -9,7 +9,7 @@ const InvestmentForm = (props: InvestmentFormProps) => {
   const { currencies, currenciesMap, status: statusCurrency } = useCurrencies()
   const { models, modelsMap, status: statusModel } = useModels()
 
-  if (statusCurrency === 'loading' || statusModel === 'loading') return null
+  if (statusCurrency === 'loading' || statusModel === 'loading') return <Spinner />
 
   return (
     <StyledInvestmentFormContainer>

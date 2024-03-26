@@ -3,12 +3,13 @@ import type { PayloadAction } from 'typings/utils'
 import { NewInvestmentActionType } from "./new-investment.constants"
 
 export type NewInvestmentState = {
-  step: number,
-  investment: NewInvestmentPayloadRequest,
-  simulateInvestment?: NewInvestmentPayloadResponse,
-  currency: string,
-  model: string,
-  terms:  boolean
+  step: number;
+  investment: NewInvestmentPayloadRequest;
+  simulateInvestment?: NewInvestmentPayloadResponse;
+  currency: string;
+  model: string;
+  terms:  boolean;
+  modal: boolean;
 }
 
 export type NewInvestmentPayloadActionPaired = {
@@ -18,6 +19,8 @@ export type NewInvestmentPayloadActionPaired = {
   [NewInvestmentActionType.SET_MODEL]: Pick<NewInvestmentState, 'model'>
   [NewInvestmentActionType.SET_CURRENCY]: Pick<NewInvestmentState, 'currency'>
   [NewInvestmentActionType.TERMS]: Pick<NewInvestmentState, 'terms'>
+  [NewInvestmentActionType.MODAL]: Pick<NewInvestmentState, 'modal'>
+  [NewInvestmentActionType.RESET]: NewInvestmentState
 }
 
 export type NewInvestmentPayloadAction = PayloadAction<NewInvestmentPayloadActionPaired>

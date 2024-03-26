@@ -1,11 +1,11 @@
-import { Chip, IconClipSVG, Text } from "components"
+import { Chip, IconClipSVG, Spinner, Text } from "components"
 import { StyledFileInputMocked, StyledInvestmentFormContainer, StyledRow, StyledRowSimulate, StyledTextBold, StyledTextContainer } from "../styles"
 import { usePayments } from "./investment-payment.utils"
 
 const InvestmentPayment = () => {
   const { payment, status } = usePayments()
 
-  if (status === 'loading') return null
+  if (status === 'loading') return <Spinner />
 
   return (
     <StyledInvestmentFormContainer>
